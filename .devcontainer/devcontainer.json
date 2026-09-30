@@ -1,0 +1,27 @@
+{
+  "name": "Bunniesnu",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:4": {
+      "moby": false
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/devcontainers/features/node:2": {
+      "version": "24.14.0",
+      "pnpmVersion": "12.3.4"
+    },
+    "ghcr.io/devcontainers-extra/features/uv:1.0.2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "terminal.integrated.fontFamily": "'MesloLGS NF', monospace"
+      }
+    }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y build-essential"
+}
